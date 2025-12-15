@@ -8,7 +8,7 @@ const MoviesPaid=()=>{
         // e.preventDefault()
         try{
 
-            const response=await axios.get('http://localhost:3000/movies/paid')
+            const response=await axios.get('https://moviesearch-mr7l.onrender.com/movies/paid')
             const movieLink=response.data
             window.open(movieLink,"_blank")
 

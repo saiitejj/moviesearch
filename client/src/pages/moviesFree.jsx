@@ -7,7 +7,7 @@ const MoviesFree=()=>{
         // e.preventDefault()
         try{
 
-            const response=await axios.get('http://localhost:3000/movies/free')
+            const response=await axios.get('https://moviesearch-mr7l.onrender.com/movies/free')
             const movieLink=response.data
             window.open(movieLink,"_blank")
 

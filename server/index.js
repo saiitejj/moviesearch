@@ -5,7 +5,16 @@ import moviesRoutes from "./Routes/moviesRoute.js";
 const app=express()
 const port=3000;
 
-app.use(cors())
+const allowedOrigins = [
+  "http://localhost:5173",        // Vite local
+  "https://moviesearch-kappa-three.vercel.app"   // 👈 your Vercel URL
+];
+
+app.use(
+  cors({
+    origin: allowedOrigins
+  })
+);
 app.use(express.json())
 
 app.get('/',(req,res)=>{
