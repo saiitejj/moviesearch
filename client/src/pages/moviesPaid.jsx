@@ -2,6 +2,7 @@ import React from "react";
 // import { Link } from "react-router-dom";
 // import {Link} from "react-router-dom"
 import axios from "axios";
+import PageTemplate from "../components/PageTemplate";
 
 const MoviesPaid=()=>{
     const handleSubmit=async()=>{
@@ -21,12 +22,16 @@ const MoviesPaid=()=>{
     }
     return (
         // <form onSubmit={handleSubmit}>
-        <div>
-            <button onClick={handleSubmit}>
-                Get Movies
-            </button>
-
-        </div>
+        <PageTemplate 
+            title="Want to get Premium movies' URL?"
+            buttons={[
+                {
+                    label:"Get Premium Movie",
+                    onClick:handleSubmit,
+                }
+            ]}
+            showNavigator={true}
+        />
     )
 
 }

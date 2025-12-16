@@ -1,10 +1,10 @@
 import React from "react";
-
+import PageTemplate from "../components/PageTemplate";
 import axios from "axios";
 
 const MoviesFree=()=>{
     const handleSubmit=async()=>{
-        // e.preventDefault()
+        
         try{
 
             const response=await axios.get('https://moviesearch-mr7l.onrender.com/movies/free')
@@ -20,12 +20,22 @@ const MoviesFree=()=>{
     }
     return (
         // <form onSubmit={handleSubmit}>
-        <div>
-            <button onClick={handleSubmit}>
-                Get Free Movies
-            </button>
+        <PageTemplate 
+            title="Want to get FREE movies URL?"
+            buttons={[
+                {
+                    label:"Get Free Movie",
+                    onClick:handleSubmit,
+                }
+            ]}
+            showNavigator={true}
+        />
+        // <div>
+        //     <button onClick={handleSubmit}>
+        //         Get Free Movies
+        //     </button>
 
-        </div>
+        // </div>
     )
 
 }
